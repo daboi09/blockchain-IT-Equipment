@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <script type="text/javascript" src="https://unpkg.com/jquery@latest/dist/jquery.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/web3@0.20.5/dist/web3.min.js"></script>
+
+            <script src="App.js"></script>
+            <link rel = "stylesheet" href="App.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#myInput").on("keyup", function() {
+var value = $(this).val().toLowerCase();
+$("#myTable tr").filter(function() {
+  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+});
+});
+});
+</script>
+</head>
+            <body>
+              <div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'maintainIT')" id="defaultOpen">Maintain ITequipment</button>
+  <button class="tablinks" onclick="openCity(event, 'ITlist')">Check IT list</button>
+</div>
+    <div id="maintainIT" class="tabcontent">
+    <br/>
+    <h1>IT equipment Maintenance</h2>
+    <h3>Warning, this is for repair or maintenance purpose</h2>
+      <div class = "input-group">
+        <button class="buttonr" id="button-retrievem"><span>Retrieve</span></button>
+          <input type ="number" id="mtnITequipmentNo" placeholder="Enter IT no"></input>
+      </div>
+    <br/>
+    <br/>
+    <h2>IT Equipment Name:</h2>
+    <input type ="text" id="mtnITequipmentName"></input>
+    <br/><br/>
+    <h2>IT Equipment Serial:</h2>
+    <input type ="text" id="mtnSerial"></input>
+    <br/><br/>
+    <h2>IT Equipment Status:</h2><span id="maintainmsg"></span><br/>
+    <select id="mtnStatus" class="selectbox">
+    <option value="Normal">Normal</option>
+    <option value="Maintenance">Maintenance</option>
+    <option value="Repairing">Repairing</option>
+    <option value="Decommissioned">Decommissioned</option>
+</select>
+    <br/><br/>
+    <h2>Transfer to Owner:</h2>
+    <input type ="text" id="mtnOwner"></input>
+    <br/><br/>
+    <h2>Wallet address:</h2>
+    <input type ="text" id="mtnAddress"></input>
+    <br/><br/>
+    <button class="button2" id="button-maintenance"><span>Submit</span></button>
+  <button class="button2" onclick="location.href='App.html'"><span>Back</span></button>
+</div>
+  <div id="ITlist" class="tabcontent">
+    <br/>
+    <h1>IT equipment list</h2>
+    <h3>Here are all the results</h2>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for ITequipment" title="Type your input">
+    <br/>
+    <div id = "ITequipmentlist">
+  <table class = "table" id="myTable"> <!--display the list of house registration-->
+  <thead>
+  <tr>
+    <th scope="col">No</th>
+    <th scope="col">Name</th>
+    <th scope="col">Serial</th>
+    <th scope="col">Status</th>
+    <th scope="col">Owner</th>
+    <th scope="col">Wallet</th>
+  </tr>
+  </thead>
+  <tbody id="ITequipmentListResults">
+  </tbody>
+  </table>
+  </div>
+  </div>
+  <script>
+  document.getElementById("button-maintenance").disabled = true;
+  function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+</body>
+</html>

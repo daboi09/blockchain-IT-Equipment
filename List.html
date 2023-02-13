@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <script type="text/javascript" src="https://unpkg.com/jquery@latest/dist/jquery.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/web3@0.20.5/dist/web3.min.js"></script>
+
+            <script src="App.js"></script>
+            <link rel = "stylesheet" href="App.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#myInput").on("keyup", function() {
+var value = $(this).val().toLowerCase();
+$("#myTable tr").filter(function() {
+  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+});
+});
+});
+</script>
+</head>
+</head>
+            <body>
+              <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for ITequipment" title="Type your input">
+                <br/>
+                <h1>IT equipment list</h2>
+                <h3>Here are all the results</h2>
+                <div id = "ITequipmentlist"></div>
+    <table class = "table" id="myTable"> <!--display the list of house registration-->
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">Serial</th>
+                <th scope="col">Status</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Wallet</th>
+            </tr>
+        </thead>
+        <tbody id="ITequipmentListResults">
+        </tbody>
+    </table>
+    <br/>
+    <button class="button2" onclick="location.href='App.html'"><span>Back</span></button>
+  </body>
+  </html>

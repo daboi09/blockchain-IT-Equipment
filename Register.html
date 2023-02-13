@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta charset="UTF-8">
+            <script type="text/javascript" src="https://unpkg.com/jquery@latest/dist/jquery.js"></script>
+            <script type="text/javascript" src="https://unpkg.com/web3@0.20.5/dist/web3.min.js"></script>
+
+            <script src="App.js"></script>
+            <link rel = "stylesheet" href="App.css">
+</head>
+            <body>
+<div class="column">
+                <br/>
+                <h1>Register an IT equipment</h2>
+                    <div class = "input-group">
+                        <h2>IT Equipment Number:</h2>
+                        <input type ="number" id="newITequipmentNo"></input>
+                    </div>
+                <br/>
+                <div class = "input-group">
+                <h2>IT Equipment Name:</h2>
+                <input type ="text" id="newITequipmentName" placeholder="Enter device name"></input>
+            </div>
+            <br/>
+            <div class = "input-group">
+            <h2>Serial Number:</h2>
+            <input type ="text" id="newSerial" placeholder="Enter serial number"></input>
+        </div>
+        <br/>
+        <div class = "input-group">
+        <h2>Status:</h2>
+        <input type ="text" id="newStatus"></input>
+    </div>
+                <br/>
+                <div class = "input-group">
+                <h2>Current Owner:</h2>
+                <input type ="text" id="newOwner" placeholder="Enter your name"></input>
+            </div>
+            <br/>
+            <div class = "input-group">
+            <h2>Wallet Address:</h2>
+            <br/>
+            <input type ="text" id="newAddress"></input>
+        </div>
+                <br/><br/>
+                <button class="button2" id="button-register">Submit</button>
+                <button class="button2" onclick="location.href='App.html'"><span>Back</span></button>
+                <script>
+              let account;
+              ethereum.request({method: 'eth_requestAccounts'}).then(accounts => {
+                account = accounts[0];
+                console.log(account);
+                $("#newAddress").val(account)
+              });
+                </script>
+              </body>
+              </html>

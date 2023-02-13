@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+        <script type="text/javascript" src="https://unpkg.com/jquery@latest/dist/jquery.js"></script>
+        <script type="text/javascript" src="https://unpkg.com/web3@0.20.5/dist/web3.min.js"></script>
+
+        <script src="App.js"></script>
+        <link rel = "stylesheet" href="App.css">
+</head>
+
+<body>
+
+    <br/>
+    <h1>Welcome to Heng IT Equipment</h2>
+    <h2>What would you like to do today?</h2>
+    <br/>
+    <span id="themessage"></span>
+    <br/>
+    <button class="button" onclick="location.href='Register.html'"><span>Register an IT equipment</span></button>
+    <button class="button" onclick="location.href='Transfer.html'"><span>Transfer an IT Equipment</span></button>
+    <button class="button" onclick="location.href='List.html'"><span>IT equipment List</span></button>
+    <button class="button" onclick="myFunction()"><span>IT equipment maintenance</span></button>
+
+    <script>
+    function myFunction() {
+      let password = prompt("Please enter the password");
+      if (password == "secret") {
+        window.location.href = "Maintenance.html";;
+      } else {
+        alert("Password is wrong")
+      }
+    }
+    </script>
+
+</body>
+</html>
